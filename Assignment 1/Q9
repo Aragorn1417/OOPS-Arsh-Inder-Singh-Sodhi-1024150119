@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+int main() {
+    
+    int x;
+    int y;
+    cin>>x;
+    cin>>y;
+    char z;
+    cin>>z;
+    switch(z){
+        case('+'): 
+        cout<<x+y;
+        break;
+        case('-'): 
+        cout<<x-y;
+        break;
+        case('*'): 
+        cout<<x*y;
+        break;
+        case('/'): 
+        if(y!=0){
+            cout<<(float)x/y;
+        } else{
+            cout<<"no";
+        }
+        break;
+        
+        default:
+        cout<<"doesnt exist";
+        break;
+    }
+}
