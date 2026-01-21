@@ -28,6 +28,16 @@ class Student{
     void updateHostel(){
         cout<<"new hostel: "; cin>>hostel;
     }
+int main() {
+    // Write C++ code here
+    Student s;
+    s.name = "Arsh";
+    s.degree = "enc";
+    s.displayDetails();
+
+    return 0;
+}
+
     void displayDetails(){
         cout<<endl<<name<<endl<<rollNo<<endl<<hostel<<endl<<degree<<endl<<cgpa<<endl;
     }
