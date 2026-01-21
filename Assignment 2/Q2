@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Student{
+    private:
+    int rollNo;
+    float cgpa;
+    public:
+    string name;
+    string degree;
+    string hostel;
+    
+    
+    void addDetails(){
+        cout<<"name: "; cin>>name;
+        cout<<"roll no: "; cin>> rollNo;
+        cout<<"degree: "; cin>>degree;
+        cout<<"hostel: "; cin>>hostel;
+        cout<<"cgpa: "; cin>>cgpa;
+    }
+    void updateDetails(){
+        cout<<"new name: ";cin>>name;
+        cout<<"new degree: ";cin>> degree;
+    }
+    void updateCGPA(){
+        cout<<"new cgpa: ";cin>>cgpa;
+    }
+    void updateHostel(){
+        cout<<"new hostel: "; cin>>hostel;
+    }
+    void displayDetails(){
+        cout<<endl<<name<<endl<<rollNo<<endl<<hostel<<endl<<degree<<endl<<cgpa<<endl;
+    }
+};
