@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int d;
+    cin>>d;
+    int fine =0;
+    if(d>=0 && d<=5){
+        cout<<"You are "<<d<<" days late"<<" your fine is 50 paisa";
+        
+    } else if(d>5 && d<=10){
+        cout<<"You are "<<d<<" days late"<<" your fine is 1 rupees";
+    } else if(d<=30){
+        cout<<"You are "<<d<<" days late"<<" your fine is 5 rupees";
+    } else{
+        cout<<"Your membership is cancelled";
+    }
+}
