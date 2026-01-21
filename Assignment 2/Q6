@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+class S{
+    public:
+    void func();
+};
+void S::func(){
+    std::cout<<"func";
+}
+int x = 10;
+int main() {
+    // Write C++ code here
+    S a;
+    a.func();
+    int x = -20;
+    std::cout<<std::endl<<x<<std::endl;
+    std::cout<<::x<<std::endl;
+    return 0;
+}
