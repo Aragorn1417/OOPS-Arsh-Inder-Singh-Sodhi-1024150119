@@ -1,1 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct Student{
+    string name;
+    int rollNo;
+    string degree;
+    string hostel;
+    float cgpa;
+    
+    void addDetails(){
+        cout<<"name: "; cin>>name;
+        cout<<"roll no: "; cin>> rollNo;
+        cout<<"degree: "; cin>>degree;
+        cout<<"hostel: "; cin>>hostel;
+        cout<<"cgpa: "; cin>>cgpa;
+    }
+    void updateDetails(){
+        cout<<"new name: ";cin>>name;
+        cout<<"new degree: ";cin>> degree;
+    }
+    void updateCGPA(){
+        cout<<"new cgpa: ";cin>>cgpa;
+    }
+    void updateHostel(){
+        cout<<"new hostel: "; cin>>hostel;
+    }
+    void displayDetails(){
+        cout<<endl<<name<<endl<<rollNo<<endl<<hostel<<endl<<degree<<endl<<cgpa<<endl;
+    }
+};
+
+int main() {
+    // Write C++ code here
+    Student s;
+    s.addDetails();
+    s.displayDetails();
+
+    return 0;
+}
 
