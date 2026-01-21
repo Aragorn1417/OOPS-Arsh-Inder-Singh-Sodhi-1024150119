@@ -1,0 +1,10 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    cout<<"hi\n"<<"hello\n\n";
+    cout<<"hi\t"<<"hello\n\n";
+    cout<<"hi\b"<<"hello\n\n";
+    cout<<"hi"<<endl; 
+    cout<< setw(10)<<”hello”;
+}
