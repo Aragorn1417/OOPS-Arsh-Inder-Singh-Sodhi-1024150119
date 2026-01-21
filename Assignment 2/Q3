@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Student{
+    private:
+    void priv(){
+        cout<<"private";
+    }
+    public:
+    void printPrivate(){
+        priv();
+    }
+};
+
+int main() {
+    // Write C++ code here
+    Student s;
+    s.priv();
+
+    return 0;
+}
