@@ -1,0 +1,11 @@
+#include <iostream>
+#include <string>
+using namespace std;
+namespace ns1{int x =10; int value(){ return 4;}};
+namespace ns2{int value(){ return 5;}};
+int main() {
+    // Write C++ code here
+    cout<<ns1::x<<endl<<ns1::value()<<endl<<::ns2::value();
+    
+    return 0;
+}
