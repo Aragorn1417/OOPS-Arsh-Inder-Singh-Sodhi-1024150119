@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+    class Complex{
+        public:
+        static int x;
+    };
+    int Complex::x=11;
+int main() {
+    // Write C++ code here
+    cout<<Complex::x;
+    return 0;
+}
