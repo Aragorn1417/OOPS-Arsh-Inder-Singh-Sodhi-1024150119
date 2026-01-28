@@ -1,0 +1,30 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+    class Complex{
+        public:
+        float real;
+        float imaginary;
+        void setComplex(){
+            cout<<"real: ";cin>>real;
+            cout<<"imaginary: ";cin>>imaginary;
+        }
+        void display(){
+            cout<<real<<" + "<<imaginary<<"i";
+        }
+        Complex add(Complex c){
+            Complex t;
+            t.real = real+ c.real;
+            t.imaginary = imaginary + c.imaginary;
+            return t;
+        }
+    };
+int main() {
+    // Write C++ code here
+    Complex c1,c2,c3;
+    c1.setComplex();
+    c2.setComplex();
+    c3 = c1.add(c2);
+    c3.display();
+    return 0;
+}
