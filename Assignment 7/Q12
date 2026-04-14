@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Test {
+    int meters;
+    int centimeters;
+
+public:
+    Test(int m = 0, int c = 0) {
+        meters = m;
+        centimeters = c;
+    }
+
+    operator float() const {
+        return meters + centimeters / 100.0f;
+    }
+};
+
+int main() {
+    int meters, centimeters;
+
+    cout << "Enter meters and centimeters: ";
+    cin >> meters >> centimeters;
+
+    Test t(meters, centimeters);
+    float distance = t;
+
+    cout << "Distance in float: " << distance << " meters" << endl;
+
+    return 0;
+}

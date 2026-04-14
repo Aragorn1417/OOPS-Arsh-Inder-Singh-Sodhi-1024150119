@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+class SafeArray {
+    int size;
+    int* data;
+
+public:
+    SafeArray(int n) {
+        size = n;
+        data = new int[size];
+    }
+
+    ~SafeArray() {
+        delete[] data;
+    }
+
+    int& operator[](int index) {
+        if (index < 0 || index >= size) {
+            cout << "Index out of bounds" << endl;
+            exit(0);
+        }
+        return data[index];
+    }
+};
+
+int main() {
+    SafeArray arr(5);
+
+    for (int i = 0; i < 5; i++) {
+        arr[i] = (i + 1) * 10;
+    }
+
+    cout << "Array elements: ";
+    for (int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    int index;
+    cout << "Enter index to access: ";
+    cin >> index;
+
+    cout << "Element at index " << index << " is " << arr[index] << endl;
+
+    return 0;
+}

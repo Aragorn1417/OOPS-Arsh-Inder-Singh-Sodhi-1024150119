@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+class Cartesian;
+
+class Polar {
+    double radius;
+    double angle;
+
+public:
+    Polar(double r = 0, double a = 0) {
+        radius = r;
+        angle = a;
+    }
+
+    operator Cartesian() const;
+};
+
+class Cartesian {
+    double x;
+    double y;
+
+public:
+    Cartesian(double xValue = 0, double yValue = 0) {
+        x = xValue;
+        y = yValue;
+    }
+
+    void show() const {
+        cout << "x = " << x << endl;
+        cout << "y = " << y << endl;
+    }
+};
+
+Polar::operator Cartesian() const {
+    double radian = angle * 3.14159265358979323846 / 180.0;
+    double xValue = radius * cos(radian);
+    double yValue = radius * sin(radian);
+    return Cartesian(xValue, yValue);
+}
+
+int main() {
+    cout << fixed << setprecision(2);
+
+    double radius, angle;
+    cout << "Enter radius and angle in degrees: ";
+    cin >> radius >> angle;
+
+    Polar p(radius, angle);
+    Cartesian c = p;
+    c.show();
+
+    return 0;
+}

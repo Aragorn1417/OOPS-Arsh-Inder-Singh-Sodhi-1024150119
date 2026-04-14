@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+class Polygon {
+protected:
+    float width;
+    float height;
+
+public:
+    void set_value(float w, float h) {
+        width = w;
+        height = h;
+    }
+
+    virtual float calculate_area() = 0;
+
+    virtual ~Polygon() {
+    }
+};
+
+class Rectangle : public Polygon {
+public:
+    float calculate_area() {
+        return width * height;
+    }
+};
+
+class Triangle : public Polygon {
+public:
+    float calculate_area() {
+        return 0.5f * width * height;
+    }
+};
+
+int main() {
+    Rectangle rect;
+    Triangle tri;
+    Polygon* ptr;
+
+    rect.set_value(10, 5);
+    tri.set_value(10, 5);
+
+    ptr = &rect;
+    cout << "Area of rectangle: " << ptr->calculate_area() << endl;
+
+    ptr = &tri;
+    cout << "Area of triangle: " << ptr->calculate_area() << endl;
+
+    return 0;
+}

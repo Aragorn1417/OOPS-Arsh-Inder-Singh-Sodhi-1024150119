@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class STRING {
+    string value;
+
+public:
+    STRING(string text = "") {
+        value = text;
+    }
+
+    void input() {
+        getline(cin, value);
+    }
+
+    bool operator==(const STRING& other) {
+        return value == other.value;
+    }
+
+    STRING operator+(const STRING& other) {
+        return STRING(value + other.value);
+    }
+
+    void display() {
+        cout << value;
+    }
+};
+
+int main() {
+    STRING s1, s2;
+
+    cout << "Enter first string: ";
+    s1.input();
+
+    cout << "Enter second string: ";
+    s2.input();
+
+    if (s1 == s2) {
+        cout << "Both strings are equal" << endl;
+    } else {
+        cout << "Both strings are not equal" << endl;
+    }
+
+    STRING s3 = s1 + s2;
+    cout << "Concatenated string: ";
+    s3.display();
+    cout << endl;
+
+    return 0;
+}
