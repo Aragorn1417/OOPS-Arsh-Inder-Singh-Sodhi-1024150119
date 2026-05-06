@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+template <class T>
+class Queue {
+
+private:
+    T arr[5];
+    int front, rear;
+
+public:
+
+    Queue() {
+        front = 0;
+        rear = -1;
+    }
+
+    void enqueue(T value) {
+
+        if(rear == 4) {
+            cout << "Queue Full\n";
+            return;
+        }
+
+        rear++;
+
+        arr[rear] = value;
+    }
+
+    void dequeue() {
+
+        if(front > rear) {
+            cout << "Queue Empty\n";
+            return;
+        }
+
+        cout << "Deleted Element = " << arr[front] << endl;
+
+        front++;
+    }
+};
+
+int main() {
+
+    Queue<int> q;
+
+    q.enqueue(10);
+    q.enqueue(20);
+
+    q.dequeue();
+
+    return 0;
+}
