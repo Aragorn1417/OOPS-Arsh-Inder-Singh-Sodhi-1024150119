@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+    ofstream out("data.txt");
+
+    out << "This is a sample text file for file handling.";
+
+    out.close();
+
+    ifstream in("data.txt");
+
+    in.seekg(10);
+
+    cout << "Current Position = " << in.tellg() << endl;
+
+    char ch;
+
+    cout << "Remaining Content:\n";
+
+    while(in.get(ch)) {
+        cout << ch;
+    }
+
+    in.close();
+
+    return 0;
+}
