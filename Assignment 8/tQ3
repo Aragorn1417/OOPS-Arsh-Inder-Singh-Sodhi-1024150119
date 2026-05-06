@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+template <class T1, class T2>
+class Pair {
+
+private:
+    T1 first;
+    T2 second;
+
+public:
+
+    Pair(T1 a, T2 b) {
+        first = a;
+        second = b;
+    }
+
+    void display() {
+
+        cout << "First Value = " << first << endl;
+        cout << "Second Value = " << second << endl;
+    }
+};
+
+int main() {
+
+    Pair<int, string> p(10, "Hello");
+
+    p.display();
+
+    return 0;
+}
