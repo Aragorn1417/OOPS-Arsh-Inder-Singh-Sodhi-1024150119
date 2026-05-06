@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Single parameter
+template <class T>
+void process(T a) {
+
+    cout << "Single Parameter: " << a << endl;
+}
+
+// Two parameters same type
+template <class T>
+void process(T a, T b) {
+
+    cout << "Same Type Parameters: ";
+    cout << a << " " << b << endl;
+}
+
+// Two parameters different type
+template <class T1, class T2>
+void process(T1 a, T2 b) {
+
+    cout << "Different Type Parameters: ";
+    cout << a << " " << b << endl;
+}
+
+int main() {
+
+    process(10);
+
+    process(10, 20);
+
+    process(10, 5.5);
+
+    return 0;
+}
