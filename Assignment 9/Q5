@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+using namespace std;
+
+int main() {
+
+    char str[100];
+
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    cout << "Length = " << strlen(str) << endl;
+
+    ofstream out("text.txt");
+
+    out << str;
+
+    out.close();
+
+    ifstream in("text.txt");
+
+    char ch;
+
+    cout << "Stored Characters:\n";
+
+    while(in.get(ch)) {
+        cout << ch;
+    }
+
+    in.close();
+
+    return 0;
+}
